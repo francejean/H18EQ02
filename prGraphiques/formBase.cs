@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prGraphiques
 {
-    public partial class Form1 : Form
+    public partial class formBase : Form
     {
-        public Form1()
+        public formBase()
         {
             InitializeComponent();
         }

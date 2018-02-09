@@ -49,20 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="btnAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="btnAction.Designer.cs">
+      <DependentUpon>btnAction.cs</DependentUpon>
+    </Compile>
     <Compile Include="btnNavigation.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="btnNavigation.Designer.cs">
       <DependentUpon>btnNavigation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="formBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="formBase.Designer.cs">
+      <DependentUpon>formBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formBase.resx">
+      <DependentUpon>formBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\prev arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace prGraphiques
 {
-    public partial class btnNavigation : Button
+    public partial class btnAction : Button
     {
-        public btnNavigation()
+        public btnAction()
         {
             InitializeComponent();
-            this.Location = new System.Drawing.Point(12, 12);
-            this.Name = "btnNavigation";
-            this.Size = new System.Drawing.Size(25, 25);
-            this.TabIndex = 0;
+            this.Location = new System.Drawing.Point(43, 12);
+            this.Name = "btnAction";
+            this.Size = new System.Drawing.Size(50, 50);
+            this.TabIndex = 1;
+            this.Text = "btnAction";
             this.UseVisualStyleBackColor = true;
         }
     }
