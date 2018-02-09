@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prGlobal
+namespace prGraphiques
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace prGlobal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formTest());
+            Application.Run(new Form1());
         }
     }
 }

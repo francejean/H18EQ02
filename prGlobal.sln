@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGlobal", "prGlobal\prGlobal.csproj", "{729B4820-DA80-49A0-950C-95A82C404179}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGraphiques", "prGraphiques\prGraphiques.csproj", "{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{729B4820-DA80-49A0-950C-95A82C404179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{729B4820-DA80-49A0-950C-95A82C404179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{729B4820-DA80-49A0-950C-95A82C404179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
