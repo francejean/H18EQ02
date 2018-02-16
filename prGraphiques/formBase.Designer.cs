@@ -30,23 +30,23 @@
         {
             this.picLogo1 = new System.Windows.Forms.PictureBox();
             this.panTitre = new System.Windows.Forms.Panel();
-            this.lbTitre1 = new prGraphiques.lbTitre();
             this.picLogo2 = new System.Windows.Forms.PictureBox();
-            this.lbDateHeure2 = new prGraphiques.lbDateHeure();
-            this.lbDateHeure1 = new prGraphiques.lbDateHeure();
+            this.btnAction4 = new prGraphiques.btnAction();
+            this.btnAction3 = new prGraphiques.btnAction();
+            this.btnAction2 = new prGraphiques.btnAction();
+            this.btnAction1 = new prGraphiques.btnAction();
+            this.lbHeure = new prGraphiques.lbDateHeure();
+            this.lbDate = new prGraphiques.lbDateHeure();
             this.btnReserv = new prGraphiques.btnNewform();
             this.btnChambre = new prGraphiques.btnNewform();
             this.btnArrivee = new prGraphiques.btnNewform();
             this.btnDepart = new prGraphiques.btnNewform();
             this.btnQuit = new prGraphiques.btnNewform();
+            this.lbTitre = new prGraphiques.lbTitre();
             this.btnNav1 = new prGraphiques.btnNavigation();
             this.btnNav2 = new prGraphiques.btnNavigation();
             this.btnNav3 = new prGraphiques.btnNavigation();
             this.btnNav4 = new prGraphiques.btnNavigation();
-            this.btnAction1 = new prGraphiques.btnAction();
-            this.btnAction2 = new prGraphiques.btnAction();
-            this.btnAction3 = new prGraphiques.btnAction();
-            this.btnAction4 = new prGraphiques.btnAction();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.panTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo2)).BeginInit();
@@ -65,22 +65,11 @@
             // panTitre
             // 
             this.panTitre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(255)))), ((int)(((byte)(161)))));
-            this.panTitre.Controls.Add(this.lbTitre1);
+            this.panTitre.Controls.Add(this.lbTitre);
             this.panTitre.Location = new System.Drawing.Point(150, 80);
             this.panTitre.Name = "panTitre";
             this.panTitre.Size = new System.Drawing.Size(682, 70);
             this.panTitre.TabIndex = 4;
-            // 
-            // lbTitre1
-            // 
-            this.lbTitre1.AutoSize = true;
-            this.lbTitre1.Font = new System.Drawing.Font("Rockwell Extra Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitre1.Location = new System.Drawing.Point(255, 16);
-            this.lbTitre1.Name = "lbTitre1";
-            this.lbTitre1.Size = new System.Drawing.Size(173, 39);
-            this.lbTitre1.TabIndex = 4;
-            this.lbTitre1.Text = "lbTitre1";
-            this.lbTitre1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picLogo2
             // 
@@ -92,25 +81,61 @@
             this.picLogo2.TabIndex = 5;
             this.picLogo2.TabStop = false;
             // 
-            // lbDateHeure2
+            // btnAction4
             // 
-            this.lbDateHeure2.AutoSize = true;
-            this.lbDateHeure2.Font = new System.Drawing.Font("Rockwell Condensed", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateHeure2.Location = new System.Drawing.Point(660, 25);
-            this.lbDateHeure2.Name = "lbDateHeure2";
-            this.lbDateHeure2.Size = new System.Drawing.Size(97, 33);
-            this.lbDateHeure2.TabIndex = 3;
-            this.lbDateHeure2.Text = "HH:MM";
+            this.btnAction4.Image = global::prGraphiques.Properties.Resources.list;
+            this.btnAction4.Location = new System.Drawing.Point(916, 435);
+            this.btnAction4.Name = "btnAction4";
+            this.btnAction4.Size = new System.Drawing.Size(50, 50);
+            this.btnAction4.TabIndex = 1;
+            this.btnAction4.UseVisualStyleBackColor = true;
             // 
-            // lbDateHeure1
+            // btnAction3
             // 
-            this.lbDateHeure1.AutoSize = true;
-            this.lbDateHeure1.Font = new System.Drawing.Font("Rockwell Condensed", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateHeure1.Location = new System.Drawing.Point(225, 25);
-            this.lbDateHeure1.Name = "lbDateHeure1";
-            this.lbDateHeure1.Size = new System.Drawing.Size(167, 33);
-            this.lbDateHeure1.TabIndex = 3;
-            this.lbDateHeure1.Text = "YYYY-MM-DD";
+            this.btnAction3.Image = global::prGraphiques.Properties.Resources.edit;
+            this.btnAction3.Location = new System.Drawing.Point(848, 435);
+            this.btnAction3.Name = "btnAction3";
+            this.btnAction3.Size = new System.Drawing.Size(50, 50);
+            this.btnAction3.TabIndex = 1;
+            this.btnAction3.UseVisualStyleBackColor = true;
+            // 
+            // btnAction2
+            // 
+            this.btnAction2.Image = global::prGraphiques.Properties.Resources.minus;
+            this.btnAction2.Location = new System.Drawing.Point(916, 367);
+            this.btnAction2.Name = "btnAction2";
+            this.btnAction2.Size = new System.Drawing.Size(50, 50);
+            this.btnAction2.TabIndex = 1;
+            this.btnAction2.UseVisualStyleBackColor = true;
+            // 
+            // btnAction1
+            // 
+            this.btnAction1.Image = global::prGraphiques.Properties.Resources.plus;
+            this.btnAction1.Location = new System.Drawing.Point(848, 367);
+            this.btnAction1.Name = "btnAction1";
+            this.btnAction1.Size = new System.Drawing.Size(50, 50);
+            this.btnAction1.TabIndex = 1;
+            this.btnAction1.UseVisualStyleBackColor = true;
+            // 
+            // lbHeure
+            // 
+            this.lbHeure.AutoSize = true;
+            this.lbHeure.Font = new System.Drawing.Font("Rockwell Condensed", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeure.Location = new System.Drawing.Point(660, 25);
+            this.lbHeure.Name = "lbHeure";
+            this.lbHeure.Size = new System.Drawing.Size(97, 33);
+            this.lbHeure.TabIndex = 3;
+            this.lbHeure.Text = "HH:MM";
+            // 
+            // lbDate
+            // 
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Rockwell Condensed", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.Location = new System.Drawing.Point(225, 25);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(167, 33);
+            this.lbDate.TabIndex = 3;
+            this.lbDate.Text = "YYYY-MM-DD";
             // 
             // btnReserv
             // 
@@ -162,6 +187,17 @@
             this.btnQuit.Text = "Quitter";
             this.btnQuit.UseVisualStyleBackColor = true;
             // 
+            // lbTitre
+            // 
+            this.lbTitre.AutoSize = true;
+            this.lbTitre.Font = new System.Drawing.Font("Rockwell Extra Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitre.Location = new System.Drawing.Point(255, 16);
+            this.lbTitre.Name = "lbTitre";
+            this.lbTitre.Size = new System.Drawing.Size(173, 39);
+            this.lbTitre.TabIndex = 4;
+            this.lbTitre.Text = "lbTitre1";
+            this.lbTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnNav1
             // 
             this.btnNav1.Image = global::prGraphiques.Properties.Resources.first_arrow;
@@ -198,42 +234,6 @@
             this.btnNav4.TabIndex = 1;
             this.btnNav4.UseVisualStyleBackColor = true;
             // 
-            // btnAction1
-            // 
-            this.btnAction1.Image = global::prGraphiques.Properties.Resources.plus;
-            this.btnAction1.Location = new System.Drawing.Point(848, 367);
-            this.btnAction1.Name = "btnAction1";
-            this.btnAction1.Size = new System.Drawing.Size(50, 50);
-            this.btnAction1.TabIndex = 1;
-            this.btnAction1.UseVisualStyleBackColor = true;
-            // 
-            // btnAction2
-            // 
-            this.btnAction2.Image = global::prGraphiques.Properties.Resources.minus;
-            this.btnAction2.Location = new System.Drawing.Point(916, 367);
-            this.btnAction2.Name = "btnAction2";
-            this.btnAction2.Size = new System.Drawing.Size(50, 50);
-            this.btnAction2.TabIndex = 1;
-            this.btnAction2.UseVisualStyleBackColor = true;
-            // 
-            // btnAction3
-            // 
-            this.btnAction3.Image = global::prGraphiques.Properties.Resources.edit;
-            this.btnAction3.Location = new System.Drawing.Point(848, 435);
-            this.btnAction3.Name = "btnAction3";
-            this.btnAction3.Size = new System.Drawing.Size(50, 50);
-            this.btnAction3.TabIndex = 1;
-            this.btnAction3.UseVisualStyleBackColor = true;
-            // 
-            // btnAction4
-            // 
-            this.btnAction4.Image = global::prGraphiques.Properties.Resources.list;
-            this.btnAction4.Location = new System.Drawing.Point(916, 435);
-            this.btnAction4.Name = "btnAction4";
-            this.btnAction4.Size = new System.Drawing.Size(50, 50);
-            this.btnAction4.TabIndex = 1;
-            this.btnAction4.UseVisualStyleBackColor = true;
-            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,8 +244,8 @@
             this.Controls.Add(this.btnAction3);
             this.Controls.Add(this.btnAction2);
             this.Controls.Add(this.btnAction1);
-            this.Controls.Add(this.lbDateHeure2);
-            this.Controls.Add(this.lbDateHeure1);
+            this.Controls.Add(this.lbHeure);
+            this.Controls.Add(this.lbDate);
             this.Controls.Add(this.btnReserv);
             this.Controls.Add(this.btnChambre);
             this.Controls.Add(this.btnArrivee);
@@ -283,9 +283,9 @@
         private btnNewform btnArrivee;
         private btnNewform btnChambre;
         private btnNewform btnReserv;
-        private lbDateHeure lbDateHeure1;
-        private lbDateHeure lbDateHeure2;
-        private lbTitre lbTitre1;
+        private lbDateHeure lbDate;
+        private lbDateHeure lbHeure;
+        private lbTitre lbTitre;
         private btnAction btnAction1;
         private btnAction btnAction2;
         private btnAction btnAction3;
