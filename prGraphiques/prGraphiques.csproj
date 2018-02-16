@@ -61,11 +61,29 @@
     <Compile Include="btnNavigation.Designer.cs">
       <DependentUpon>btnNavigation.cs</DependentUpon>
     </Compile>
+    <Compile Include="btnNewform.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="btnNewform.Designer.cs">
+      <DependentUpon>btnNewform.cs</DependentUpon>
+    </Compile>
     <Compile Include="formBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formBase.Designer.cs">
       <DependentUpon>formBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lbDateHeure.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lbDateHeure.Designer.cs">
+      <DependentUpon>lbDateHeure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lbTitre.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lbTitre.Designer.cs">
+      <DependentUpon>lbTitre.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

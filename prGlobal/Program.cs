@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using prGraphiques;
 
 namespace prGlobal
 {
@@ -16,7 +17,7 @@ namespace prGlobal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formTest());
+            Application.Run(new formBase());
         }
     }
 }
