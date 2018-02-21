@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGlobal", "prGlobal\prGlob
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGraphiques", "prGraphiques\prGraphiques.csproj", "{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prChambre", "prChambre\prChambre.csproj", "{F1BCAFFC-9924-46C1-8755-76800E67E8A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1BCAFFC-9924-46C1-8755-76800E67E8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BCAFFC-9924-46C1-8755-76800E67E8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1BCAFFC-9924-46C1-8755-76800E67E8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BCAFFC-9924-46C1-8755-76800E67E8A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
