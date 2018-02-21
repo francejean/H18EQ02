@@ -38,10 +38,6 @@
             this.btnAction1 = new prGraphiques.btnAction();
             this.lbHeure = new prGraphiques.lbDateHeure();
             this.lbDate = new prGraphiques.lbDateHeure();
-            this.btnReserv = new prGraphiques.btnNewform();
-            this.btnChambre = new prGraphiques.btnNewform();
-            this.btnArrivee = new prGraphiques.btnNewform();
-            this.btnDepart = new prGraphiques.btnNewform();
             this.btnNav1 = new prGraphiques.btnNavigation();
             this.btnNav2 = new prGraphiques.btnNavigation();
             this.btnNav3 = new prGraphiques.btnNavigation();
@@ -148,46 +144,6 @@
             this.lbDate.TabIndex = 3;
             this.lbDate.Text = "YYYY-MM-DD";
             // 
-            // btnReserv
-            // 
-            this.btnReserv.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserv.Location = new System.Drawing.Point(848, 175);
-            this.btnReserv.Name = "btnReserv";
-            this.btnReserv.Size = new System.Drawing.Size(118, 30);
-            this.btnReserv.TabIndex = 2;
-            this.btnReserv.Text = "Réservations";
-            this.btnReserv.UseVisualStyleBackColor = true;
-            // 
-            // btnChambre
-            // 
-            this.btnChambre.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChambre.Location = new System.Drawing.Point(848, 223);
-            this.btnChambre.Name = "btnChambre";
-            this.btnChambre.Size = new System.Drawing.Size(118, 30);
-            this.btnChambre.TabIndex = 2;
-            this.btnChambre.Text = "Chambres";
-            this.btnChambre.UseVisualStyleBackColor = true;
-            // 
-            // btnArrivee
-            // 
-            this.btnArrivee.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArrivee.Location = new System.Drawing.Point(848, 271);
-            this.btnArrivee.Name = "btnArrivee";
-            this.btnArrivee.Size = new System.Drawing.Size(118, 30);
-            this.btnArrivee.TabIndex = 2;
-            this.btnArrivee.Text = "Arrivées";
-            this.btnArrivee.UseVisualStyleBackColor = true;
-            // 
-            // btnDepart
-            // 
-            this.btnDepart.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDepart.Location = new System.Drawing.Point(848, 319);
-            this.btnDepart.Name = "btnDepart";
-            this.btnDepart.Size = new System.Drawing.Size(118, 30);
-            this.btnDepart.TabIndex = 2;
-            this.btnDepart.Text = "Départs";
-            this.btnDepart.UseVisualStyleBackColor = true;
-            // 
             // btnNav1
             // 
             this.btnNav1.Image = global::prGraphiques.Properties.Resources.first_arrow;
@@ -246,10 +202,6 @@
             this.Controls.Add(this.btnAction4);
             this.Controls.Add(this.lbHeure);
             this.Controls.Add(this.lbDate);
-            this.Controls.Add(this.btnReserv);
-            this.Controls.Add(this.btnChambre);
-            this.Controls.Add(this.btnArrivee);
-            this.Controls.Add(this.btnDepart);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.picLogo1);
             this.Controls.Add(this.picLogo2);
@@ -271,25 +223,21 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picLogo1;
-        private btnNavigation btnNav1;
-        private btnNavigation btnNav4;
-        private btnNavigation btnNav3;
-        private btnNavigation btnNav2;
-        private System.Windows.Forms.Panel panTitre;
-        private System.Windows.Forms.PictureBox picLogo2;
-        private btnNewform btnDepart;
-        private btnNewform btnArrivee;
-        private btnNewform btnChambre;
-        private btnNewform btnReserv;
-        private lbDateHeure lbDate;
-        private lbDateHeure lbHeure;
-        private lbTitre lbTitre;
-        private btnAction btnAction1;
-        private btnAction btnAction2;
-        private btnAction btnAction3;
-        private btnAction btnAction4;
-        private btnNewform btnQuit;
+        protected System.Windows.Forms.PictureBox picLogo1;
+        protected btnNavigation btnNav1;
+        protected btnNavigation btnNav4;
+        protected btnNavigation btnNav3;
+        protected btnNavigation btnNav2;
+        protected System.Windows.Forms.Panel panTitre;
+        protected System.Windows.Forms.PictureBox picLogo2;
+        protected lbDateHeure lbDate;
+        protected lbDateHeure lbHeure;
+        protected lbTitre lbTitre;
+        protected btnAction btnAction1;
+        protected btnAction btnAction2;
+        protected btnAction btnAction3;
+        protected btnAction btnAction4;
+        protected btnNewform btnQuit;
     }
 }
 
