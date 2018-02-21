@@ -30,6 +30,7 @@
         {
             this.picLogo1 = new System.Windows.Forms.PictureBox();
             this.panTitre = new System.Windows.Forms.Panel();
+            this.lbTitre = new prGraphiques.lbTitre();
             this.picLogo2 = new System.Windows.Forms.PictureBox();
             this.btnAction4 = new prGraphiques.btnAction();
             this.btnAction3 = new prGraphiques.btnAction();
@@ -41,12 +42,11 @@
             this.btnChambre = new prGraphiques.btnNewform();
             this.btnArrivee = new prGraphiques.btnNewform();
             this.btnDepart = new prGraphiques.btnNewform();
-            this.btnQuit = new prGraphiques.btnNewform();
-            this.lbTitre = new prGraphiques.lbTitre();
             this.btnNav1 = new prGraphiques.btnNavigation();
             this.btnNav2 = new prGraphiques.btnNavigation();
             this.btnNav3 = new prGraphiques.btnNavigation();
             this.btnNav4 = new prGraphiques.btnNavigation();
+            this.btnQuit = new prGraphiques.btnNewform();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.panTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo2)).BeginInit();
@@ -70,6 +70,17 @@
             this.panTitre.Name = "panTitre";
             this.panTitre.Size = new System.Drawing.Size(682, 70);
             this.panTitre.TabIndex = 4;
+            // 
+            // lbTitre
+            // 
+            this.lbTitre.AutoSize = true;
+            this.lbTitre.Font = new System.Drawing.Font("Rockwell Extra Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitre.Location = new System.Drawing.Point(255, 16);
+            this.lbTitre.Name = "lbTitre";
+            this.lbTitre.Size = new System.Drawing.Size(173, 39);
+            this.lbTitre.TabIndex = 4;
+            this.lbTitre.Text = "lbTitre1";
+            this.lbTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picLogo2
             // 
@@ -177,27 +188,6 @@
             this.btnDepart.Text = "Départs";
             this.btnDepart.UseVisualStyleBackColor = true;
             // 
-            // btnQuit
-            // 
-            this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.Location = new System.Drawing.Point(848, 547);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(118, 30);
-            this.btnQuit.TabIndex = 2;
-            this.btnQuit.Text = "Quitter";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            // 
-            // lbTitre
-            // 
-            this.lbTitre.AutoSize = true;
-            this.lbTitre.Font = new System.Drawing.Font("Rockwell Extra Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitre.Location = new System.Drawing.Point(255, 16);
-            this.lbTitre.Name = "lbTitre";
-            this.lbTitre.Size = new System.Drawing.Size(173, 39);
-            this.lbTitre.TabIndex = 4;
-            this.lbTitre.Text = "lbTitre1";
-            this.lbTitre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnNav1
             // 
             this.btnNav1.Image = global::prGraphiques.Properties.Resources.first_arrow;
@@ -234,16 +224,26 @@
             this.btnNav4.TabIndex = 1;
             this.btnNav4.UseVisualStyleBackColor = true;
             // 
+            // btnQuit
+            // 
+            this.btnQuit.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuit.Location = new System.Drawing.Point(848, 547);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(118, 30);
+            this.btnQuit.TabIndex = 2;
+            this.btnQuit.Text = "Quitter";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.ClientSize = new System.Drawing.Size(982, 603);
-            this.Controls.Add(this.btnAction4);
-            this.Controls.Add(this.btnAction3);
-            this.Controls.Add(this.btnAction2);
             this.Controls.Add(this.btnAction1);
+            this.Controls.Add(this.btnAction2);
+            this.Controls.Add(this.btnAction3);
+            this.Controls.Add(this.btnAction4);
             this.Controls.Add(this.lbHeure);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.btnReserv);
@@ -278,7 +278,6 @@
         private btnNavigation btnNav2;
         private System.Windows.Forms.Panel panTitre;
         private System.Windows.Forms.PictureBox picLogo2;
-        private btnNewform btnQuit;
         private btnNewform btnDepart;
         private btnNewform btnArrivee;
         private btnNewform btnChambre;
@@ -290,6 +289,7 @@
         private btnAction btnAction2;
         private btnAction btnAction3;
         private btnAction btnAction4;
+        private btnNewform btnQuit;
     }
 }
 
