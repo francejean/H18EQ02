@@ -82,6 +82,12 @@ namespace prArivee {
         
         private global::System.Data.DataRelation relationTypTrxCodFKTrx;
         
+        private global::System.Data.DataRelation relationCliIdFKArri1;
+        
+        private global::System.Data.DataRelation relationCliIdFKDep1;
+        
+        private global::System.Data.DataRelation relationCliIdFKTrx1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -509,6 +515,9 @@ namespace prArivee {
             this.relationCliIdFKTrx = this.Relations["CliIdFKTrx"];
             this.relationReserIdFKTrx = this.Relations["ReserIdFKTrx"];
             this.relationTypTrxCodFKTrx = this.Relations["TypTrxCodFKTrx"];
+            this.relationCliIdFKArri1 = this.Relations["CliIdFKArri1"];
+            this.relationCliIdFKDep1 = this.Relations["CliIdFKDep1"];
+            this.relationCliIdFKTrx1 = this.Relations["CliIdFKTrx1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -611,6 +620,18 @@ namespace prArivee {
                         this.tableTYPETRX.CodTypTrxColumn}, new global::System.Data.DataColumn[] {
                         this.tableTRX.CodTypTrxColumn}, false);
             this.Relations.Add(this.relationTypTrxCodFKTrx);
+            this.relationCliIdFKArri1 = new global::System.Data.DataRelation("CliIdFKArri1", new global::System.Data.DataColumn[] {
+                        this.tableRESERVATION.IdCliColumn}, new global::System.Data.DataColumn[] {
+                        this.tableARRIVE.IdCliColumn}, false);
+            this.Relations.Add(this.relationCliIdFKArri1);
+            this.relationCliIdFKDep1 = new global::System.Data.DataRelation("CliIdFKDep1", new global::System.Data.DataColumn[] {
+                        this.tableRESERVATION.IdCliColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDEPART.IdCliColumn}, false);
+            this.Relations.Add(this.relationCliIdFKDep1);
+            this.relationCliIdFKTrx1 = new global::System.Data.DataRelation("CliIdFKTrx1", new global::System.Data.DataColumn[] {
+                        this.tableRESERVATION.IdCliColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTRX.IdCliColumn}, false);
+            this.Relations.Add(this.relationCliIdFKTrx1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3281,6 +3302,8 @@ namespace prArivee {
             
             private global::System.Data.DataColumn columnIdCli;
             
+            private global::System.Data.DataColumn columnNom;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RESERVATIONDataTable() {
@@ -3356,6 +3379,14 @@ namespace prArivee {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NomColumn {
+                get {
+                    return this.columnNom;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3391,14 +3422,15 @@ namespace prArivee {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RESERVATIONRow AddRESERVATIONRow(System.DateTime DateReser, System.DateTime DateDebut, System.DateTime DateFin, CLIENTRow parentCLIENTRowByCliIdFKReser) {
+            public RESERVATIONRow AddRESERVATIONRow(System.DateTime DateReser, System.DateTime DateDebut, System.DateTime DateFin, CLIENTRow parentCLIENTRowByCliIdFKReser, string Nom) {
                 RESERVATIONRow rowRESERVATIONRow = ((RESERVATIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         DateReser,
                         DateDebut,
                         DateFin,
-                        null};
+                        null,
+                        Nom};
                 if ((parentCLIENTRowByCliIdFKReser != null)) {
                     columnValuesArray[4] = parentCLIENTRowByCliIdFKReser[0];
                 }
@@ -3436,6 +3468,7 @@ namespace prArivee {
                 this.columnDateDebut = base.Columns["DateDebut"];
                 this.columnDateFin = base.Columns["DateFin"];
                 this.columnIdCli = base.Columns["IdCli"];
+                this.columnNom = base.Columns["Nom"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3451,6 +3484,8 @@ namespace prArivee {
                 base.Columns.Add(this.columnDateFin);
                 this.columnIdCli = new global::System.Data.DataColumn("IdCli", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdCli);
+                this.columnNom = new global::System.Data.DataColumn("Nom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNom);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdReser}, true));
                 this.columnIdReser.AutoIncrement = true;
@@ -3459,6 +3494,7 @@ namespace prArivee {
                 this.columnIdReser.AllowDBNull = false;
                 this.columnIdReser.ReadOnly = true;
                 this.columnIdReser.Unique = true;
+                this.columnNom.MaxLength = 25;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4660,6 +4696,17 @@ namespace prArivee {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RESERVATIONRow RESERVATIONRowByCliIdFKArri1 {
+                get {
+                    return ((RESERVATIONRow)(this.GetParentRow(this.Table.ParentRelations["CliIdFKArri1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CliIdFKArri1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDateArriveNull() {
                 return this.IsNull(this.tableARRIVE.DateArriveColumn);
             }
@@ -5663,6 +5710,17 @@ namespace prArivee {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RESERVATIONRow RESERVATIONRowByCliIdFKDep1 {
+                get {
+                    return ((RESERVATIONRow)(this.GetParentRow(this.Table.ParentRelations["CliIdFKDep1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CliIdFKDep1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDateDepartNull() {
                 return this.IsNull(this.tableDEPART.DateDepartColumn);
             }
@@ -5878,6 +5936,22 @@ namespace prArivee {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nom {
+                get {
+                    try {
+                        return ((string)(this[this.tableRESERVATION.NomColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Nom\' in table \'RESERVATION\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRESERVATION.NomColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CLIENTRow CLIENTRow {
                 get {
                     return ((CLIENTRow)(this.GetParentRow(this.Table.ParentRelations["CliIdFKReser"])));
@@ -5937,6 +6011,18 @@ namespace prArivee {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNomNull() {
+                return this.IsNull(this.tableRESERVATION.NomColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNomNull() {
+                this[this.tableRESERVATION.NomColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ARRIVERow[] GetARRIVERows() {
                 if ((this.Table.ChildRelations["ReserIdFKArri"] == null)) {
                     return new ARRIVERow[0];
@@ -5976,6 +6062,39 @@ namespace prArivee {
                 }
                 else {
                     return ((TRXRow[])(base.GetChildRows(this.Table.ChildRelations["ReserIdFKTrx"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ARRIVERow[] GetARRIVERowsByCliIdFKArri1() {
+                if ((this.Table.ChildRelations["CliIdFKArri1"] == null)) {
+                    return new ARRIVERow[0];
+                }
+                else {
+                    return ((ARRIVERow[])(base.GetChildRows(this.Table.ChildRelations["CliIdFKArri1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DEPARTRow[] GetDEPARTRowsByCliIdFKDep1() {
+                if ((this.Table.ChildRelations["CliIdFKDep1"] == null)) {
+                    return new DEPARTRow[0];
+                }
+                else {
+                    return ((DEPARTRow[])(base.GetChildRows(this.Table.ChildRelations["CliIdFKDep1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TRXRow[] GetTRXRowsByCliIdFKTrx1() {
+                if ((this.Table.ChildRelations["CliIdFKTrx1"] == null)) {
+                    return new TRXRow[0];
+                }
+                else {
+                    return ((TRXRow[])(base.GetChildRows(this.Table.ChildRelations["CliIdFKTrx1"])));
                 }
             }
         }
@@ -6158,6 +6277,17 @@ namespace prArivee {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["TypTrxCodFKTrx"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RESERVATIONRow RESERVATIONRowByCliIdFKTrx1 {
+                get {
+                    return ((RESERVATIONRow)(this.GetParentRow(this.Table.ParentRelations["CliIdFKTrx1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CliIdFKTrx1"]);
                 }
             }
             
@@ -10080,49 +10210,8 @@ SELECT CodLoc, DescLoc FROM LOCALISATION WHERE (CodLoc = @CodLoc)";
             tableMapping.ColumnMappings.Add("DateDebut", "DateDebut");
             tableMapping.ColumnMappings.Add("DateFin", "DateFin");
             tableMapping.ColumnMappings.Add("IdCli", "IdCli");
+            tableMapping.ColumnMappings.Add("Nom", "Nom");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RESERVATION] WHERE (([IdReser] = @Original_IdReser) AND ((@IsNull_DateReser = 1 AND [DateReser] IS NULL) OR ([DateReser] = @Original_DateReser)) AND ((@IsNull_DateDebut = 1 AND [DateDebut] IS NULL) OR ([DateDebut] = @Original_DateDebut)) AND ((@IsNull_DateFin = 1 AND [DateFin] IS NULL) OR ([DateFin] = @Original_DateFin)) AND ((@IsNull_IdCli = 1 AND [IdCli] IS NULL) OR ([IdCli] = @Original_IdCli)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdReser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdReser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateReser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateReser", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateReser", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateReser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateDebut", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateDebut", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateDebut", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateDebut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateFin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateFin", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdCli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCli", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCli", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[RESERVATION] ([DateReser], [DateDebut], [DateFin], [IdCli]) VA" +
-                "LUES (@DateReser, @DateDebut, @DateFin, @IdCli);\r\nSELECT IdReser, DateReser, Dat" +
-                "eDebut, DateFin, IdCli FROM RESERVATION WHERE (IdReser = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateReser", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateReser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateDebut", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateDebut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFin", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCli", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RESERVATION] SET [DateReser] = @DateReser, [DateDebut] = @DateDebut, [DateFin] = @DateFin, [IdCli] = @IdCli WHERE (([IdReser] = @Original_IdReser) AND ((@IsNull_DateReser = 1 AND [DateReser] IS NULL) OR ([DateReser] = @Original_DateReser)) AND ((@IsNull_DateDebut = 1 AND [DateDebut] IS NULL) OR ([DateDebut] = @Original_DateDebut)) AND ((@IsNull_DateFin = 1 AND [DateFin] IS NULL) OR ([DateFin] = @Original_DateFin)) AND ((@IsNull_IdCli = 1 AND [IdCli] IS NULL) OR ([IdCli] = @Original_IdCli)));
-SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM RESERVATION WHERE (IdReser = @IdReser)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateReser", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateReser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateDebut", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateDebut", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFin", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCli", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdReser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdReser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateReser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateReser", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateReser", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateReser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateDebut", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateDebut", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateDebut", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateDebut", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateFin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateFin", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdCli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCli", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCli", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdReser", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdReser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10138,7 +10227,9 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM RESERVATION WHERE (IdR
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM dbo.RESERVATION";
+            this._commandCollection[0].CommandText = "SELECT RESERVATION.IdReser, RESERVATION.DateReser, RESERVATION.DateDebut, RESERVA" +
+                "TION.DateFin, RESERVATION.IdCli, CLIENT.Nom\r\nFROM     RESERVATION INNER JOIN\r\n  " +
+                "                CLIENT ON RESERVATION.IdCli = CLIENT.IdCli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10164,221 +10255,6 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM RESERVATION WHERE (IdR
             dsArrivee.RESERVATIONDataTable dataTable = new dsArrivee.RESERVATIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsArrivee.RESERVATIONDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsArrivee dataSet) {
-            return this.Adapter.Update(dataSet, "RESERVATION");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdReser, global::System.Nullable<global::System.DateTime> Original_DateReser, global::System.Nullable<global::System.DateTime> Original_DateDebut, global::System.Nullable<global::System.DateTime> Original_DateFin, global::System.Nullable<int> Original_IdCli) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdReser));
-            if ((Original_DateReser.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DateReser.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateDebut.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateDebut.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateFin.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_DateFin.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IdCli.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_IdCli.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> DateReser, global::System.Nullable<global::System.DateTime> DateDebut, global::System.Nullable<global::System.DateTime> DateFin, global::System.Nullable<int> IdCli) {
-            if ((DateReser.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(DateReser.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((DateDebut.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DateDebut.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((DateFin.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateFin.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((IdCli.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(IdCli.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DateReser, global::System.Nullable<global::System.DateTime> DateDebut, global::System.Nullable<global::System.DateTime> DateFin, global::System.Nullable<int> IdCli, int Original_IdReser, global::System.Nullable<global::System.DateTime> Original_DateReser, global::System.Nullable<global::System.DateTime> Original_DateDebut, global::System.Nullable<global::System.DateTime> Original_DateFin, global::System.Nullable<int> Original_IdCli, int IdReser) {
-            if ((DateReser.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DateReser.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((DateDebut.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DateDebut.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((DateFin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateFin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((IdCli.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(IdCli.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IdReser));
-            if ((Original_DateReser.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_DateReser.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateDebut.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DateDebut.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_DateFin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DateFin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_IdCli.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IdCli.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(IdReser));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> DateReser, global::System.Nullable<global::System.DateTime> DateDebut, global::System.Nullable<global::System.DateTime> DateFin, global::System.Nullable<int> IdCli, int Original_IdReser, global::System.Nullable<global::System.DateTime> Original_DateReser, global::System.Nullable<global::System.DateTime> Original_DateDebut, global::System.Nullable<global::System.DateTime> Original_DateFin, global::System.Nullable<int> Original_IdCli) {
-            return this.Update(DateReser, DateDebut, DateFin, IdCli, Original_IdReser, Original_DateReser, Original_DateDebut, Original_DateFin, Original_IdCli, Original_IdReser);
         }
     }
     
@@ -11724,8 +11600,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
         
         private LOCALISATIONTableAdapter _lOCALISATIONTableAdapter;
         
-        private RESERVATIONTableAdapter _rESERVATIONTableAdapter;
-        
         private TRXTableAdapter _tRXTableAdapter;
         
         private TYPECHAMTableAdapter _tYPECHAMTableAdapter;
@@ -11864,20 +11738,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public RESERVATIONTableAdapter RESERVATIONTableAdapter {
-            get {
-                return this._rESERVATIONTableAdapter;
-            }
-            set {
-                this._rESERVATIONTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public TRXTableAdapter TRXTableAdapter {
             get {
                 return this._tRXTableAdapter;
@@ -11966,10 +11826,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                             && (this._lOCALISATIONTableAdapter.Connection != null))) {
                     return this._lOCALISATIONTableAdapter.Connection;
                 }
-                if (((this._rESERVATIONTableAdapter != null) 
-                            && (this._rESERVATIONTableAdapter.Connection != null))) {
-                    return this._rESERVATIONTableAdapter.Connection;
-                }
                 if (((this._tRXTableAdapter != null) 
                             && (this._tRXTableAdapter.Connection != null))) {
                     return this._tRXTableAdapter.Connection;
@@ -12017,9 +11873,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                     count = (count + 1);
                 }
                 if ((this._lOCALISATIONTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._rESERVATIONTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._tRXTableAdapter != null)) {
@@ -12084,15 +11937,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._cOMMODITETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rESERVATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RESERVATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rESERVATIONTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -12200,14 +12044,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rESERVATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RESERVATION.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rESERVATIONTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tYPETRXTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TYPETRX.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12311,14 +12147,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tYPETRXTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rESERVATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RESERVATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rESERVATIONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -12441,11 +12269,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._rESERVATIONTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._rESERVATIONTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._tRXTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tRXTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -12565,15 +12388,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._lOCALISATIONTableAdapter.Adapter);
                     }
                 }
-                if ((this._rESERVATIONTableAdapter != null)) {
-                    revertConnections.Add(this._rESERVATIONTableAdapter, this._rESERVATIONTableAdapter.Connection);
-                    this._rESERVATIONTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._rESERVATIONTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._rESERVATIONTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._rESERVATIONTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._rESERVATIONTableAdapter.Adapter);
-                    }
-                }
                 if ((this._tRXTableAdapter != null)) {
                     revertConnections.Add(this._tRXTableAdapter, this._tRXTableAdapter.Connection);
                     this._tRXTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -12690,10 +12504,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 if ((this._lOCALISATIONTableAdapter != null)) {
                     this._lOCALISATIONTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lOCALISATIONTableAdapter]));
                     this._lOCALISATIONTableAdapter.Transaction = null;
-                }
-                if ((this._rESERVATIONTableAdapter != null)) {
-                    this._rESERVATIONTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rESERVATIONTableAdapter]));
-                    this._rESERVATIONTableAdapter.Transaction = null;
                 }
                 if ((this._tRXTableAdapter != null)) {
                     this._tRXTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tRXTableAdapter]));
