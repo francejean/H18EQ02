@@ -79,6 +79,12 @@
     <Compile Include="lbDateHeure.Designer.cs">
       <DependentUpon>lbDateHeure.cs</DependentUpon>
     </Compile>
+    <Compile Include="lbInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lbInfo.Designer.cs">
+      <DependentUpon>lbInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="lbTitre.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="txtInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="txtInfo.Designer.cs">
+      <DependentUpon>txtInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="formBase.resx">
       <DependentUpon>formBase.cs</DependentUpon>
     </EmbeddedResource>

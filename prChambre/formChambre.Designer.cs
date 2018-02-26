@@ -35,7 +35,7 @@
             // 
             // lbTitre
             // 
-            this.lbTitre.Location = new System.Drawing.Point(170, 16);
+            this.lbTitre.Location = new System.Drawing.Point(130, 16);
             this.lbTitre.Size = new System.Drawing.Size(453, 39);
             this.lbTitre.Text = "Gestion des chambres";
             // 
