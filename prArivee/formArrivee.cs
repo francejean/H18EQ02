@@ -11,9 +11,9 @@ using prGraphiques;
 
 namespace prArivee
 {
-    public partial class formArivee : formBase
+    public partial class formArrivee : formBase
     {
-        public formArivee()
+        public formArrivee()
         {
             InitializeComponent();
         }

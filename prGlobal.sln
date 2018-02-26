@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGraphiques", "prGraphique
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prChambre", "prChambre\prChambre.csproj", "{F1BCAFFC-9924-46C1-8755-76800E67E8A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prArivee", "prArivee\prArivee.csproj", "{2E1A5E5D-3453-4149-83F8-8D9EED1D76B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prArrivee", "prArivee\prArrivee.csproj", "{2E1A5E5D-3453-4149-83F8-8D9EED1D76B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -16,7 +16,7 @@ namespace prArivee
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formArivee());
+            Application.Run(new formArrivee());
         }
     }
 }
