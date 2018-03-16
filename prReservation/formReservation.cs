@@ -24,7 +24,11 @@ namespace prReservation
             Fill();
             linkReservation();
             //Link_Contient();
+        }
 
+        private void updateDG()
+        {
+            this.BSde.Filter = "IdReser = '" + txtNoReserv.Text + "'";
         }
 
         private void modeConsultation()
@@ -72,15 +76,18 @@ namespace prReservation
             this.TAcli.Fill(this.dsReservation.CLIENT);
             this.TAde.Fill(this.dsReservation.DE);
             this.TAdep.Fill(this.dsReservation.DEPART);
+            this.TAtypc.Fill(this.dsReservation.TYPECHAM);
             this.TAres.Fill(this.dsReservation.RESERVATION);
             this.TAtrx.Fill(this.dsReservation.TRX);
-            this.TAtypc.Fill(this.dsReservation.TYPECHAM);
         }
 
         private void linkReservation()
         {
             this.BSres.DataMember = "RESERVATION";
             this.BSres.DataSource = this.dsReservation;
+
+            this.BSde.DataMember = "DE";
+            this.BSde.DataSource = this.dsReservation;
 
             try
             {
@@ -96,31 +103,41 @@ namespace prReservation
                 txtReservle.DataBindings.Add("Text", BSres, "DateReser");
                 txtDateDeb.DataBindings.Add("Text", BSres, "DateDebut");
                 txtDateFin.DataBindings.Add("Text", BSres, "DateFin");
+                dgCham.Columns[0].DataPropertyName = "NoCham";
+                dgCham.Columns[1].DataPropertyName = "DescTyp";
+                dgCham.Columns[2].DataPropertyName = "Prix";
+                dgCham.Columns[3].DataPropertyName = "Attribuee";
             }
             catch(Exception ee)
             {
                 MessageBox.Show(ee.Message);
             }
+
+            updateDG();
         }
 
         private void btnNav3_Click(object sender, EventArgs e)
         {
             BSres.MoveNext();
+            updateDG();
         }
 
         private void btnNav2_Click(object sender, EventArgs e)
         {
             BSres.MovePrevious();
+            updateDG();
         }
 
         private void btnNav1_Click(object sender, EventArgs e)
         {
             BSres.MoveFirst();
+            updateDG();
         }
 
         private void btnNav4_Click(object sender, EventArgs e)
         {
             BSres.MoveLast();
+            updateDG();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)

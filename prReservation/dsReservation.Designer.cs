@@ -64,8 +64,6 @@ namespace prReservation {
         
         private global::System.Data.DataRelation relationChamNoFKDe;
         
-        private global::System.Data.DataRelation relationReserIdFKDe;
-        
         private global::System.Data.DataRelation relationChamNoFKDep;
         
         private global::System.Data.DataRelation relationCliIdFKDep;
@@ -87,6 +85,16 @@ namespace prReservation {
         private global::System.Data.DataRelation relationCliIdFKDep1;
         
         private global::System.Data.DataRelation relationCliIdFKTrx1;
+        
+        private global::System.Data.DataRelation relationReserIdFKDe;
+        
+        private global::System.Data.DataRelation relationChamNoFKArri1;
+        
+        private global::System.Data.DataRelation relationChamNoFKAya1;
+        
+        private global::System.Data.DataRelation relationChamNoFKDep1;
+        
+        private global::System.Data.DataRelation relationChamNoFKTrx1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -506,7 +514,6 @@ namespace prReservation {
             this.relationLocCodFKCha = this.Relations["LocCodFKCha"];
             this.relationTypChamCodFKCha = this.Relations["TypChamCodFKCha"];
             this.relationChamNoFKDe = this.Relations["ChamNoFKDe"];
-            this.relationReserIdFKDe = this.Relations["ReserIdFKDe"];
             this.relationChamNoFKDep = this.Relations["ChamNoFKDep"];
             this.relationCliIdFKDep = this.Relations["CliIdFKDep"];
             this.relationReserIdFKDep = this.Relations["ReserIdFKDep"];
@@ -518,6 +525,11 @@ namespace prReservation {
             this.relationCliIdFKArri1 = this.Relations["CliIdFKArri1"];
             this.relationCliIdFKDep1 = this.Relations["CliIdFKDep1"];
             this.relationCliIdFKTrx1 = this.Relations["CliIdFKTrx1"];
+            this.relationReserIdFKDe = this.Relations["ReserIdFKDe"];
+            this.relationChamNoFKArri1 = this.Relations["ChamNoFKArri1"];
+            this.relationChamNoFKAya1 = this.Relations["ChamNoFKAya1"];
+            this.relationChamNoFKDep1 = this.Relations["ChamNoFKDep1"];
+            this.relationChamNoFKTrx1 = this.Relations["ChamNoFKTrx1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -584,10 +596,6 @@ namespace prReservation {
                         this.tableCHAMBRE.NoChamColumn}, new global::System.Data.DataColumn[] {
                         this.tableDE.NoChamColumn}, false);
             this.Relations.Add(this.relationChamNoFKDe);
-            this.relationReserIdFKDe = new global::System.Data.DataRelation("ReserIdFKDe", new global::System.Data.DataColumn[] {
-                        this.tableRESERVATION.IdReserColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDE.IdReserColumn}, false);
-            this.Relations.Add(this.relationReserIdFKDe);
             this.relationChamNoFKDep = new global::System.Data.DataRelation("ChamNoFKDep", new global::System.Data.DataColumn[] {
                         this.tableCHAMBRE.NoChamColumn}, new global::System.Data.DataColumn[] {
                         this.tableDEPART.NoChamColumn}, false);
@@ -632,6 +640,26 @@ namespace prReservation {
                         this.tableRESERVATION.IdCliColumn}, new global::System.Data.DataColumn[] {
                         this.tableTRX.IdCliColumn}, false);
             this.Relations.Add(this.relationCliIdFKTrx1);
+            this.relationReserIdFKDe = new global::System.Data.DataRelation("ReserIdFKDe", new global::System.Data.DataColumn[] {
+                        this.tableRESERVATION.IdReserColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDE.IdReserColumn}, false);
+            this.Relations.Add(this.relationReserIdFKDe);
+            this.relationChamNoFKArri1 = new global::System.Data.DataRelation("ChamNoFKArri1", new global::System.Data.DataColumn[] {
+                        this.tableDE.NoChamColumn}, new global::System.Data.DataColumn[] {
+                        this.tableARRIVE.NoChamColumn}, false);
+            this.Relations.Add(this.relationChamNoFKArri1);
+            this.relationChamNoFKAya1 = new global::System.Data.DataRelation("ChamNoFKAya1", new global::System.Data.DataColumn[] {
+                        this.tableDE.NoChamColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAYANT.NoChamColumn}, false);
+            this.Relations.Add(this.relationChamNoFKAya1);
+            this.relationChamNoFKDep1 = new global::System.Data.DataRelation("ChamNoFKDep1", new global::System.Data.DataColumn[] {
+                        this.tableDE.NoChamColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDEPART.NoChamColumn}, false);
+            this.Relations.Add(this.relationChamNoFKDep1);
+            this.relationChamNoFKTrx1 = new global::System.Data.DataRelation("ChamNoFKTrx1", new global::System.Data.DataColumn[] {
+                        this.tableDE.NoChamColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTRX.NoChamColumn}, false);
+            this.Relations.Add(this.relationChamNoFKTrx1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2399,6 +2427,10 @@ namespace prReservation {
             
             private global::System.Data.DataColumn columnNoCham;
             
+            private global::System.Data.DataColumn columnPrix;
+            
+            private global::System.Data.DataColumn columnDescTyp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DEDataTable() {
@@ -2458,6 +2490,22 @@ namespace prReservation {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrixColumn {
+                get {
+                    return this.columnPrix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescTypColumn {
+                get {
+                    return this.columnDescTyp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2493,12 +2541,14 @@ namespace prReservation {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DERow AddDERow(byte Attribuee, RESERVATIONRow parentRESERVATIONRowByReserIdFKDe, CHAMBRERow parentCHAMBRERowByChamNoFKDe) {
+            public DERow AddDERow(byte Attribuee, RESERVATIONRow parentRESERVATIONRowByReserIdFKDe, CHAMBRERow parentCHAMBRERowByChamNoFKDe, decimal Prix, string DescTyp) {
                 DERow rowDERow = ((DERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Attribuee,
                         null,
-                        null};
+                        null,
+                        Prix,
+                        DescTyp};
                 if ((parentRESERVATIONRowByReserIdFKDe != null)) {
                     columnValuesArray[1] = parentRESERVATIONRowByReserIdFKDe[0];
                 }
@@ -2530,6 +2580,8 @@ namespace prReservation {
                 this.columnAttribuee = base.Columns["Attribuee"];
                 this.columnIdReser = base.Columns["IdReser"];
                 this.columnNoCham = base.Columns["NoCham"];
+                this.columnPrix = base.Columns["Prix"];
+                this.columnDescTyp = base.Columns["DescTyp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2541,7 +2593,12 @@ namespace prReservation {
                 base.Columns.Add(this.columnIdReser);
                 this.columnNoCham = new global::System.Data.DataColumn("NoCham", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoCham);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrix);
+                this.columnDescTyp = new global::System.Data.DataColumn("DescTyp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescTyp);
                 this.columnNoCham.MaxLength = 3;
+                this.columnDescTyp.MaxLength = 25;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4795,6 +4852,17 @@ namespace prReservation {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DERow DERow {
+                get {
+                    return ((DERow)(this.GetParentRow(this.Table.ParentRelations["ChamNoFKArri1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ChamNoFKArri1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDateArriveNull() {
                 return this.IsNull(this.tableARRIVE.DateArriveColumn);
             }
@@ -4907,6 +4975,17 @@ namespace prReservation {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["ComCodFKAya"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DERow DERow {
+                get {
+                    return ((DERow)(this.GetParentRow(this.Table.ParentRelations["ChamNoFKAya1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ChamNoFKAya1"]);
                 }
             }
             
@@ -5601,6 +5680,38 @@ namespace prReservation {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Prix {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDE.PrixColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Prix\' in table \'DE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDE.PrixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescTyp {
+                get {
+                    try {
+                        return ((string)(this[this.tableDE.DescTypColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescTyp\' in table \'DE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDE.DescTypColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CHAMBRERow CHAMBRERow {
                 get {
                     return ((CHAMBRERow)(this.GetParentRow(this.Table.ParentRelations["ChamNoFKDe"])));
@@ -5655,6 +5766,74 @@ namespace prReservation {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNoChamNull() {
                 this[this.tableDE.NoChamColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrixNull() {
+                return this.IsNull(this.tableDE.PrixColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrixNull() {
+                this[this.tableDE.PrixColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescTypNull() {
+                return this.IsNull(this.tableDE.DescTypColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescTypNull() {
+                this[this.tableDE.DescTypColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ARRIVERow[] GetARRIVERows() {
+                if ((this.Table.ChildRelations["ChamNoFKArri1"] == null)) {
+                    return new ARRIVERow[0];
+                }
+                else {
+                    return ((ARRIVERow[])(base.GetChildRows(this.Table.ChildRelations["ChamNoFKArri1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AYANTRow[] GetAYANTRows() {
+                if ((this.Table.ChildRelations["ChamNoFKAya1"] == null)) {
+                    return new AYANTRow[0];
+                }
+                else {
+                    return ((AYANTRow[])(base.GetChildRows(this.Table.ChildRelations["ChamNoFKAya1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DEPARTRow[] GetDEPARTRows() {
+                if ((this.Table.ChildRelations["ChamNoFKDep1"] == null)) {
+                    return new DEPARTRow[0];
+                }
+                else {
+                    return ((DEPARTRow[])(base.GetChildRows(this.Table.ChildRelations["ChamNoFKDep1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TRXRow[] GetTRXRows() {
+                if ((this.Table.ChildRelations["ChamNoFKTrx1"] == null)) {
+                    return new TRXRow[0];
+                }
+                else {
+                    return ((TRXRow[])(base.GetChildRows(this.Table.ChildRelations["ChamNoFKTrx1"])));
+                }
             }
         }
         
@@ -5804,6 +5983,17 @@ namespace prReservation {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["CliIdFKDep1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DERow DERow {
+                get {
+                    return ((DERow)(this.GetParentRow(this.Table.ParentRelations["ChamNoFKDep1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ChamNoFKDep1"]);
                 }
             }
             
@@ -6290,17 +6480,6 @@ namespace prReservation {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DERow[] GetDERows() {
-                if ((this.Table.ChildRelations["ReserIdFKDe"] == null)) {
-                    return new DERow[0];
-                }
-                else {
-                    return ((DERow[])(base.GetChildRows(this.Table.ChildRelations["ReserIdFKDe"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DEPARTRow[] GetDEPARTRows() {
                 if ((this.Table.ChildRelations["ReserIdFKDep"] == null)) {
                     return new DEPARTRow[0];
@@ -6351,6 +6530,17 @@ namespace prReservation {
                 }
                 else {
                     return ((TRXRow[])(base.GetChildRows(this.Table.ChildRelations["CliIdFKTrx1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DERow[] GetDERows() {
+                if ((this.Table.ChildRelations["ReserIdFKDe"] == null)) {
+                    return new DERow[0];
+                }
+                else {
+                    return ((DERow[])(base.GetChildRows(this.Table.ChildRelations["ReserIdFKDe"])));
                 }
             }
         }
@@ -6544,6 +6734,17 @@ namespace prReservation {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["CliIdFKTrx1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DERow DERow {
+                get {
+                    return ((DERow)(this.GetParentRow(this.Table.ParentRelations["ChamNoFKTrx1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["ChamNoFKTrx1"]);
                 }
             }
             
@@ -9411,15 +9612,9 @@ SELECT CodCom, DescCom FROM COMMODITE WHERE (CodCom = @CodCom)";
             tableMapping.ColumnMappings.Add("Attribuee", "Attribuee");
             tableMapping.ColumnMappings.Add("IdReser", "IdReser");
             tableMapping.ColumnMappings.Add("NoCham", "NoCham");
+            tableMapping.ColumnMappings.Add("Prix", "Prix");
+            tableMapping.ColumnMappings.Add("DescTyp", "DescTyp");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DE] ([Attribuee], [IdReser], [NoCham]) VALUES (@Attribuee, @Id" +
-                "Reser, @NoCham)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attribuee", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attribuee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdReser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdReser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoCham", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoCham", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9435,7 +9630,9 @@ SELECT CodCom, DescCom FROM COMMODITE WHERE (CodCom = @CodCom)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Attribuee, IdReser, NoCham FROM dbo.DE";
+            this._commandCollection[0].CommandText = "SELECT DE.Attribuee, DE.IdReser, DE.NoCham, CHAMBRE.Prix, TYPECHAM.DescTyp\r\nFROM " +
+                "    DE INNER JOIN\r\n                  CHAMBRE ON DE.NoCham = CHAMBRE.NoCham INNER" +
+                " JOIN\r\n                  TYPECHAM ON CHAMBRE.CodTypCham = TYPECHAM.CodTypCham";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9461,74 +9658,6 @@ SELECT CodCom, DescCom FROM COMMODITE WHERE (CodCom = @CodCom)";
             dsReservation.DEDataTable dataTable = new dsReservation.DEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsReservation.DEDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsReservation dataSet) {
-            return this.Adapter.Update(dataSet, "DE");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<byte> Attribuee, global::System.Nullable<int> IdReser, string NoCham) {
-            if ((Attribuee.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((byte)(Attribuee.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((IdReser.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IdReser.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((NoCham == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NoCham));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -10486,7 +10615,7 @@ SELECT CodLoc, DescLoc FROM LOCALISATION WHERE (CodLoc = @CodLoc)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT RESERVATION.IdReser, RESERVATION.DateReser, RESERVATION.DateDebut, RESERVATION.DateFin, RESERVATION.IdCli, CLIENT.Nom, CLIENT.Adresse, CLIENT.Telephone, CLIENT.NoCarte, CLIENT.TypeCarte, CLIENT.DateExp, 
@@ -10494,10 +10623,6 @@ SELECT CodLoc, DescLoc FROM LOCALISATION WHERE (CodLoc = @CodLoc)";
 FROM     RESERVATION INNER JOIN
                   CLIENT ON RESERVATION.IdCli = CLIENT.IdCli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdReser, DateReser, DateDebut, DateFin, IdCli\r\nFROM     RESERVATION";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10519,30 +10644,6 @@ FROM     RESERVATION INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsReservation.RESERVATIONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsReservation.RESERVATIONDataTable dataTable = new dsReservation.RESERVATIONDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(dsReservation.RESERVATIONDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsReservation.RESERVATIONDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
             dsReservation.RESERVATIONDataTable dataTable = new dsReservation.RESERVATIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11885,8 +11986,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
         
         private COMMODITETableAdapter _cOMMODITETableAdapter;
         
-        private DETableAdapter _dETableAdapter;
-        
         private DEPARTTableAdapter _dEPARTTableAdapter;
         
         private LOCALISATIONTableAdapter _lOCALISATIONTableAdapter;
@@ -11979,20 +12078,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
             }
             set {
                 this._cOMMODITETableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public DETableAdapter DETableAdapter {
-            get {
-                return this._dETableAdapter;
-            }
-            set {
-                this._dETableAdapter = value;
             }
         }
         
@@ -12105,10 +12190,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                             && (this._cOMMODITETableAdapter.Connection != null))) {
                     return this._cOMMODITETableAdapter.Connection;
                 }
-                if (((this._dETableAdapter != null) 
-                            && (this._dETableAdapter.Connection != null))) {
-                    return this._dETableAdapter.Connection;
-                }
                 if (((this._dEPARTTableAdapter != null) 
                             && (this._dEPARTTableAdapter.Connection != null))) {
                     return this._dEPARTTableAdapter.Connection;
@@ -12155,9 +12236,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                     count = (count + 1);
                 }
                 if ((this._cOMMODITETableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._dETableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._dEPARTTableAdapter != null)) {
@@ -12258,15 +12336,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._dETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._dEPARTTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.DEPART.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12359,14 +12428,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._dETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DE.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dETableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._dEPARTTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.DEPART.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12406,14 +12467,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._dEPARTTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._dETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._dETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -12545,11 +12598,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._dETableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._dETableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._dEPARTTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._dEPARTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -12650,15 +12698,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                     if (this._cOMMODITETableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._cOMMODITETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._cOMMODITETableAdapter.Adapter);
-                    }
-                }
-                if ((this._dETableAdapter != null)) {
-                    revertConnections.Add(this._dETableAdapter, this._dETableAdapter.Connection);
-                    this._dETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._dETableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._dETableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._dETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._dETableAdapter.Adapter);
                     }
                 }
                 if ((this._dEPARTTableAdapter != null)) {
@@ -12783,10 +12822,6 @@ SELECT CodTypTrx, DescTrx, Nature FROM TYPETRX WHERE (CodTypTrx = @CodTypTrx)";
                 if ((this._cOMMODITETableAdapter != null)) {
                     this._cOMMODITETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cOMMODITETableAdapter]));
                     this._cOMMODITETableAdapter.Transaction = null;
-                }
-                if ((this._dETableAdapter != null)) {
-                    this._dETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dETableAdapter]));
-                    this._dETableAdapter.Transaction = null;
                 }
                 if ((this._dEPARTTableAdapter != null)) {
                     this._dEPARTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dEPARTTableAdapter]));

@@ -7,3 +7,10 @@
     }
 }
 
+
+namespace prReservation.dsReservationTableAdapters {
+    
+    
+    public partial class RESERVATIONTableAdapter {
+    }
+}

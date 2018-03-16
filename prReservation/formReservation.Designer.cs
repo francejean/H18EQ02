@@ -63,6 +63,11 @@
             this.lbDateDeb = new prGraphiques.lbInfo();
             this.lbReservle = new prGraphiques.lbInfo();
             this.lbNoReserv = new prGraphiques.lbInfo();
+            this.dgCham = new System.Windows.Forms.DataGridView();
+            this.NoCham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypCham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Attribuee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAres = new prReservation.dsReservationTableAdapters.RESERVATIONTableAdapter();
             this.TAcli = new prReservation.dsReservationTableAdapters.CLIENTTableAdapter();
             this.TAde = new prReservation.dsReservationTableAdapters.DETableAdapter();
@@ -85,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BStypc)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReservation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +154,7 @@
             this.panel1.Controls.Add(this.lbTypCart);
             this.panel1.Controls.Add(this.lbSoldeDu);
             this.panel1.Controls.Add(this.lbDateExp);
-            this.panel1.Location = new System.Drawing.Point(12, 211);
+            this.panel1.Location = new System.Drawing.Point(12, 159);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 225);
             this.panel1.TabIndex = 6;
@@ -299,7 +305,7 @@
             this.panel2.Controls.Add(this.lbDateDeb);
             this.panel2.Controls.Add(this.lbReservle);
             this.panel2.Controls.Add(this.lbNoReserv);
-            this.panel2.Location = new System.Drawing.Point(513, 211);
+            this.panel2.Location = new System.Drawing.Point(513, 159);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(319, 225);
             this.panel2.TabIndex = 7;
@@ -372,6 +378,49 @@
             this.lbNoReserv.TabIndex = 6;
             this.lbNoReserv.Text = "No. Réservation :";
             // 
+            // dgCham
+            // 
+            this.dgCham.AllowUserToAddRows = false;
+            this.dgCham.AllowUserToDeleteRows = false;
+            this.dgCham.AutoGenerateColumns = false;
+            this.dgCham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NoCham,
+            this.TypCham,
+            this.Prix,
+            this.Attribuee});
+            this.dgCham.DataSource = this.BSde;
+            this.dgCham.Location = new System.Drawing.Point(13, 406);
+            this.dgCham.Name = "dgCham";
+            this.dgCham.ReadOnly = true;
+            this.dgCham.RowTemplate.Height = 24;
+            this.dgCham.Size = new System.Drawing.Size(819, 171);
+            this.dgCham.TabIndex = 8;
+            // 
+            // NoCham
+            // 
+            this.NoCham.HeaderText = "No. Chambre";
+            this.NoCham.Name = "NoCham";
+            this.NoCham.ReadOnly = true;
+            // 
+            // TypCham
+            // 
+            this.TypCham.HeaderText = "Type";
+            this.TypCham.Name = "TypCham";
+            this.TypCham.ReadOnly = true;
+            // 
+            // Prix
+            // 
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            this.Prix.ReadOnly = true;
+            // 
+            // Attribuee
+            // 
+            this.Attribuee.HeaderText = "Attribuée";
+            this.Attribuee.Name = "Attribuee";
+            this.Attribuee.ReadOnly = true;
+            // 
             // TAres
             // 
             this.TAres.ClearBeforeFill = true;
@@ -414,6 +463,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 603);
+            this.Controls.Add(this.dgCham);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "formReservation";
@@ -434,6 +484,7 @@
             this.Controls.SetChildIndex(this.btnAction3, 0);
             this.Controls.SetChildIndex(this.btnAction2, 0);
             this.Controls.SetChildIndex(this.btnAction1, 0);
+            this.Controls.SetChildIndex(this.dgCham, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).EndInit();
             this.panTitre.ResumeLayout(false);
             this.panTitre.PerformLayout();
@@ -450,6 +501,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReservation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -501,6 +553,11 @@
         private prGraphiques.txtInfo txtReservle;
         private prGraphiques.txtInfo txtNoReserv;
         private prGraphiques.txtInfo txtDateDeb;
+        private System.Windows.Forms.DataGridView dgCham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoCham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypCham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Attribuee;
     }
 }
 
