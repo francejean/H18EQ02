@@ -17,7 +17,7 @@ namespace prGlobal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formBase());
+            Application.Run(new formMenu());
         }
     }
 }
