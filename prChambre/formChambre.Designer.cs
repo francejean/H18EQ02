@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.TAde = new prChambre.dsChambreTableAdapters.DETableAdapter();
-            this.TAres = new prChambre.dsChambreTableAdapters.RESERVATIONTableAdapter();
-            this.TAcha = new prChambre.dsChambreTableAdapters.CHAMBRETableAdapter();
-            this.TAaya = new prChambre.dsChambreTableAdapters.AYANTTableAdapter();
-            this.TAtypc = new prChambre.dsChambreTableAdapters.TYPECHAMTableAdapter();
-            this.TAloc = new prChambre.dsChambreTableAdapters.LOCALISATIONTableAdapter();
-            this.dsChambre = new prChambre.dsChambre();
             this.BSde = new System.Windows.Forms.BindingSource(this.components);
             this.BSres = new System.Windows.Forms.BindingSource(this.components);
             this.BScha = new System.Windows.Forms.BindingSource(this.components);
@@ -60,16 +53,27 @@
             this.lbTypeDesc = new prGraphiques.lbInfo();
             this.lbLocDesc = new prGraphiques.lbInfo();
             this.lbMemo = new prGraphiques.lbInfo();
+            this.dgCom = new System.Windows.Forms.DataGridView();
+            this.CodCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TAde = new prChambre.dsChambreTableAdapters.DETableAdapter();
+            this.TAres = new prChambre.dsChambreTableAdapters.RESERVATIONTableAdapter();
+            this.TAcha = new prChambre.dsChambreTableAdapters.CHAMBRETableAdapter();
+            this.TAaya = new prChambre.dsChambreTableAdapters.AYANTTableAdapter();
+            this.TAtypc = new prChambre.dsChambreTableAdapters.TYPECHAMTableAdapter();
+            this.TAloc = new prChambre.dsChambreTableAdapters.LOCALISATIONTableAdapter();
+            this.dsChambre = new prChambre.dsChambre();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.panTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BScha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSaya)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BStypc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSloc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNav1
@@ -113,35 +117,6 @@
             // btnQuit
             // 
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
-            // TAde
-            // 
-            this.TAde.ClearBeforeFill = true;
-            // 
-            // TAres
-            // 
-            this.TAres.ClearBeforeFill = true;
-            // 
-            // TAcha
-            // 
-            this.TAcha.ClearBeforeFill = true;
-            // 
-            // TAaya
-            // 
-            this.TAaya.ClearBeforeFill = true;
-            // 
-            // TAtypc
-            // 
-            this.TAtypc.ClearBeforeFill = true;
-            // 
-            // TAloc
-            // 
-            this.TAloc.ClearBeforeFill = true;
-            // 
-            // dsChambre
-            // 
-            this.dsChambre.DataSetName = "dsChambre";
-            this.dsChambre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtNoCham
             // 
@@ -296,11 +271,70 @@
             this.lbMemo.TabIndex = 6;
             this.lbMemo.Text = "Mémo:";
             // 
+            // dgCom
+            // 
+            this.dgCom.AllowUserToAddRows = false;
+            this.dgCom.AllowUserToDeleteRows = false;
+            this.dgCom.AutoGenerateColumns = false;
+            this.dgCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodCom,
+            this.DescCom});
+            this.dgCom.DataSource = this.BSaya;
+            this.dgCom.Location = new System.Drawing.Point(24, 367);
+            this.dgCom.Name = "dgCom";
+            this.dgCom.ReadOnly = true;
+            this.dgCom.RowTemplate.Height = 24;
+            this.dgCom.Size = new System.Drawing.Size(808, 210);
+            this.dgCom.TabIndex = 7;
+            // 
+            // CodCom
+            // 
+            this.CodCom.HeaderText = "Code";
+            this.CodCom.Name = "CodCom";
+            this.CodCom.ReadOnly = true;
+            // 
+            // DescCom
+            // 
+            this.DescCom.HeaderText = "Description";
+            this.DescCom.Name = "DescCom";
+            this.DescCom.ReadOnly = true;
+            // 
+            // TAde
+            // 
+            this.TAde.ClearBeforeFill = true;
+            // 
+            // TAres
+            // 
+            this.TAres.ClearBeforeFill = true;
+            // 
+            // TAcha
+            // 
+            this.TAcha.ClearBeforeFill = true;
+            // 
+            // TAaya
+            // 
+            this.TAaya.ClearBeforeFill = true;
+            // 
+            // TAtypc
+            // 
+            this.TAtypc.ClearBeforeFill = true;
+            // 
+            // TAloc
+            // 
+            this.TAloc.ClearBeforeFill = true;
+            // 
+            // dsChambre
+            // 
+            this.dsChambre.DataSetName = "dsChambre";
+            this.dsChambre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // formChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 603);
+            this.Controls.Add(this.dgCom);
             this.Controls.Add(this.lbTypeDesc);
             this.Controls.Add(this.lbLocDesc);
             this.Controls.Add(this.lbMemo);
@@ -353,17 +387,19 @@
             this.Controls.SetChildIndex(this.lbMemo, 0);
             this.Controls.SetChildIndex(this.lbLocDesc, 0);
             this.Controls.SetChildIndex(this.lbTypeDesc, 0);
+            this.Controls.SetChildIndex(this.dgCom, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).EndInit();
             this.panTitre.ResumeLayout(false);
             this.panTitre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BScha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSaya)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BStypc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSloc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,6 +438,9 @@
         private prGraphiques.lbInfo lbTypeDesc;
         private prGraphiques.lbInfo lbLocDesc;
         private prGraphiques.lbInfo lbMemo;
+        private System.Windows.Forms.DataGridView dgCom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodCom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescCom;
     }
 }
 

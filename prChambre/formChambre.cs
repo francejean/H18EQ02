@@ -19,6 +19,11 @@ namespace prChambre
             modeConsultation();
         }
 
+        private void updateDG()
+        {
+            this.BSaya.Filter = "NoCham = '" + txtNoCham.Text + "'";
+        }
+
         private void modeConsultation()
         {
             btnAction3.Enabled = true;
@@ -60,17 +65,20 @@ namespace prChambre
         private void Fill()
         {
             this.TAaya.Fill(this.dsChambre.AYANT);
-            this.TAcha.Fill(this.dsChambre.CHAMBRE);
             this.TAde.Fill(this.dsChambre.DE);
             this.TAloc.Fill(this.dsChambre.LOCALISATION);
             this.TAres.Fill(this.dsChambre.RESERVATION);
             this.TAtypc.Fill(this.dsChambre.TYPECHAM);
+            this.TAcha.Fill(this.dsChambre.CHAMBRE);
         }
 
         private void linkChambre()
         {
             this.BScha.DataMember = "CHAMBRE";
             this.BScha.DataSource = this.dsChambre;
+
+            this.BSaya.DataMember = "AYANT";
+            this.BSaya.DataSource = this.dsChambre;
 
             try
             {
@@ -83,31 +91,39 @@ namespace prChambre
                 txtTypeDesc.DataBindings.Add("Text", BScha, "DescTyp");
                 txtLocDesc.DataBindings.Add("Text", BScha, "DescLoc");
                 txtMemo.DataBindings.Add("Text", BScha, "Memo");
+                dgCom.Columns[0].DataPropertyName = "CodCom";
+                dgCom.Columns[1].DataPropertyName = "DescCom";
             }
             catch (Exception ee)
             {
                 //MessageBox.Show(ee.Message);
             }
+
+            updateDG();
         }
 
         private void btnNav1_Click(object sender, EventArgs e)
         {
             BScha.MoveFirst();
+            updateDG();
         }
 
         private void btnNav2_Click(object sender, EventArgs e)
         {
             BScha.MovePrevious();
+            updateDG();
         }
 
         private void btnNav3_Click(object sender, EventArgs e)
         {
             BScha.MoveNext();
+            updateDG();
         }
 
         private void btnNav4_Click(object sender, EventArgs e)
         {
             BScha.MoveLast();
+            updateDG();
         }
 
         private void btnAction4_Click(object sender, EventArgs e)
