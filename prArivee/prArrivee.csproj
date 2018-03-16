@@ -82,8 +82,8 @@
     </None>
     <None Include="dsArrivee.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsArrivee.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>dsArrivee1.Designer.cs</LastGenOutput>
     </None>
     <None Include="dsArrivee.xss">
       <DependentUpon>dsArrivee.xsd</DependentUpon>
