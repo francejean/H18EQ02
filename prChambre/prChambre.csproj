@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsChambre.cs">
+      <DependentUpon>dsChambre.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsChambre.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
