@@ -29,18 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.BSde = new System.Windows.Forms.BindingSource(this.components);
-            this.BSres = new System.Windows.Forms.BindingSource(this.components);
-            this.BScha = new System.Windows.Forms.BindingSource(this.components);
-            this.BSaya = new System.Windows.Forms.BindingSource(this.components);
-            this.BStypc = new System.Windows.Forms.BindingSource(this.components);
-            this.BSloc = new System.Windows.Forms.BindingSource(this.components);
             this.txtNoCham = new prGraphiques.txtInfo();
             this.lbNoCham = new prGraphiques.lbInfo();
             this.txtEtage = new prGraphiques.txtInfo();
             this.txtEtat = new prGraphiques.txtInfo();
-            this.txtCodeType = new prGraphiques.txtInfo();
-            this.txtCodeLoc = new prGraphiques.txtInfo();
             this.txtPrix = new prGraphiques.txtInfo();
             this.txtMemo = new prGraphiques.txtInfo();
             this.txtLocDesc = new prGraphiques.txtInfo();
@@ -56,6 +48,7 @@
             this.dgCom = new System.Windows.Forms.DataGridView();
             this.CodCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BSaya = new System.Windows.Forms.BindingSource(this.components);
             this.TAde = new prChambre.dsChambreTableAdapters.DETableAdapter();
             this.TAres = new prChambre.dsChambreTableAdapters.RESERVATIONTableAdapter();
             this.TAcha = new prChambre.dsChambreTableAdapters.CHAMBRETableAdapter();
@@ -63,17 +56,31 @@
             this.TAtypc = new prChambre.dsChambreTableAdapters.TYPECHAMTableAdapter();
             this.TAloc = new prChambre.dsChambreTableAdapters.LOCALISATIONTableAdapter();
             this.dsChambre = new prChambre.dsChambre();
+            this.txtCodeType = new prGraphiques.txtInfo();
+            this.txtCodeLoc = new prGraphiques.txtInfo();
+            this.btnConfirmer = new prGraphiques.btnNewform();
+            this.btnAnnuler = new prGraphiques.btnNewform();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAjoutAyant = new prGraphiques.btnAction();
+            this.btnSuppressionAyant = new prGraphiques.btnAction();
+            this.BSde = new System.Windows.Forms.BindingSource(this.components);
+            this.BSres = new System.Windows.Forms.BindingSource(this.components);
+            this.BScha = new System.Windows.Forms.BindingSource(this.components);
+            this.BStypc = new System.Windows.Forms.BindingSource(this.components);
+            this.BSloc = new System.Windows.Forms.BindingSource(this.components);
+            this.TAbkcom = new prChambre.dsChambreTableAdapters.BKCOMMODITETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).BeginInit();
             this.panTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BSaya)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BScha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BSaya)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BStypc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSloc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNav1
@@ -149,20 +156,6 @@
             this.txtEtat.Size = new System.Drawing.Size(100, 22);
             this.txtEtat.TabIndex = 5;
             // 
-            // txtCodeType
-            // 
-            this.txtCodeType.Location = new System.Drawing.Point(387, 196);
-            this.txtCodeType.Name = "txtCodeType";
-            this.txtCodeType.Size = new System.Drawing.Size(34, 22);
-            this.txtCodeType.TabIndex = 5;
-            // 
-            // txtCodeLoc
-            // 
-            this.txtCodeLoc.Location = new System.Drawing.Point(387, 239);
-            this.txtCodeLoc.Name = "txtCodeLoc";
-            this.txtCodeLoc.Size = new System.Drawing.Size(34, 22);
-            this.txtCodeLoc.TabIndex = 5;
-            // 
             // txtPrix
             // 
             this.txtPrix.Location = new System.Drawing.Point(321, 278);
@@ -215,7 +208,7 @@
             // 
             this.lbCodeType.AutoSize = true;
             this.lbCodeType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeType.Location = new System.Drawing.Point(300, 199);
+            this.lbCodeType.Location = new System.Drawing.Point(280, 199);
             this.lbCodeType.Name = "lbCodeType";
             this.lbCodeType.Size = new System.Drawing.Size(81, 17);
             this.lbCodeType.TabIndex = 6;
@@ -225,7 +218,7 @@
             // 
             this.lbCodeLoc.AutoSize = true;
             this.lbCodeLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeLoc.Location = new System.Drawing.Point(257, 242);
+            this.lbCodeLoc.Location = new System.Drawing.Point(237, 242);
             this.lbCodeLoc.Name = "lbCodeLoc";
             this.lbCodeLoc.Size = new System.Drawing.Size(124, 17);
             this.lbCodeLoc.TabIndex = 6;
@@ -299,6 +292,7 @@
             this.DescCom.HeaderText = "Description";
             this.DescCom.Name = "DescCom";
             this.DescCom.ReadOnly = true;
+            this.DescCom.Width = 450;
             // 
             // TAde
             // 
@@ -329,11 +323,79 @@
             this.dsChambre.DataSetName = "dsChambre";
             this.dsChambre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // txtCodeType
+            // 
+            this.txtCodeType.Location = new System.Drawing.Point(368, 196);
+            this.txtCodeType.Name = "txtCodeType";
+            this.txtCodeType.Size = new System.Drawing.Size(53, 22);
+            this.txtCodeType.TabIndex = 5;
+            this.txtCodeType.DoubleClick += new System.EventHandler(this.txtCodeType_DoubleClick);
+            // 
+            // txtCodeLoc
+            // 
+            this.txtCodeLoc.Location = new System.Drawing.Point(367, 239);
+            this.txtCodeLoc.Name = "txtCodeLoc";
+            this.txtCodeLoc.Size = new System.Drawing.Size(53, 22);
+            this.txtCodeLoc.TabIndex = 5;
+            this.txtCodeLoc.DoubleClick += new System.EventHandler(this.txtCodeLoc_DoubleClick);
+            // 
+            // btnConfirmer
+            // 
+            this.btnConfirmer.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmer.Location = new System.Drawing.Point(848, 231);
+            this.btnConfirmer.Name = "btnConfirmer";
+            this.btnConfirmer.Size = new System.Drawing.Size(118, 30);
+            this.btnConfirmer.TabIndex = 2;
+            this.btnConfirmer.Text = "Confirmer";
+            this.btnConfirmer.UseVisualStyleBackColor = true;
+            this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Font = new System.Drawing.Font("Rockwell Condensed", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.Location = new System.Drawing.Point(848, 278);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(118, 30);
+            this.btnAnnuler.TabIndex = 2;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // btnAjoutAyant
+            // 
+            this.btnAjoutAyant.Image = global::prChambre.Properties.Resources.plus;
+            this.btnAjoutAyant.Location = new System.Drawing.Point(24, 311);
+            this.btnAjoutAyant.Name = "btnAjoutAyant";
+            this.btnAjoutAyant.Size = new System.Drawing.Size(50, 50);
+            this.btnAjoutAyant.TabIndex = 1;
+            this.btnAjoutAyant.UseVisualStyleBackColor = true;
+            // 
+            // btnSuppressionAyant
+            // 
+            this.btnSuppressionAyant.Image = global::prChambre.Properties.Resources.minus;
+            this.btnSuppressionAyant.Location = new System.Drawing.Point(81, 311);
+            this.btnSuppressionAyant.Name = "btnSuppressionAyant";
+            this.btnSuppressionAyant.Size = new System.Drawing.Size(50, 50);
+            this.btnSuppressionAyant.TabIndex = 1;
+            this.btnSuppressionAyant.UseVisualStyleBackColor = true;
+            // 
+            // TAbkcom
+            // 
+            this.TAbkcom.ClearBeforeFill = true;
+            // 
             // formChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 603);
+            this.Controls.Add(this.btnSuppressionAyant);
+            this.Controls.Add(this.btnAjoutAyant);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.dgCom);
             this.Controls.Add(this.lbTypeDesc);
             this.Controls.Add(this.lbLocDesc);
@@ -388,18 +450,23 @@
             this.Controls.SetChildIndex(this.lbLocDesc, 0);
             this.Controls.SetChildIndex(this.lbTypeDesc, 0);
             this.Controls.SetChildIndex(this.dgCom, 0);
+            this.Controls.SetChildIndex(this.btnConfirmer, 0);
+            this.Controls.SetChildIndex(this.btnAnnuler, 0);
+            this.Controls.SetChildIndex(this.btnAjoutAyant, 0);
+            this.Controls.SetChildIndex(this.btnSuppressionAyant, 0);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo1)).EndInit();
             this.panTitre.ResumeLayout(false);
             this.panTitre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BSaya)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BScha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BSaya)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BStypc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BSloc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsChambre)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,8 +491,6 @@
         private prGraphiques.lbInfo lbNoCham;
         private prGraphiques.txtInfo txtEtage;
         private prGraphiques.txtInfo txtEtat;
-        private prGraphiques.txtInfo txtCodeType;
-        private prGraphiques.txtInfo txtCodeLoc;
         private prGraphiques.txtInfo txtPrix;
         private prGraphiques.txtInfo txtMemo;
         private prGraphiques.txtInfo txtLocDesc;
@@ -441,6 +506,14 @@
         private System.Windows.Forms.DataGridView dgCom;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodCom;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescCom;
+        private prGraphiques.txtInfo txtCodeType;
+        private prGraphiques.txtInfo txtCodeLoc;
+        private prGraphiques.btnNewform btnConfirmer;
+        private prGraphiques.btnNewform btnAnnuler;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private prGraphiques.btnAction btnSuppressionAyant;
+        private prGraphiques.btnAction btnAjoutAyant;
+        private dsChambreTableAdapters.BKCOMMODITETableAdapter TAbkcom;
     }
 }
 

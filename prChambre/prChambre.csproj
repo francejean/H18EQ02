@@ -52,7 +52,7 @@
     <Compile Include="dsChambre.cs">
       <DependentUpon>dsChambre.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dsChambre.Designer.cs">
+    <Compile Include="dsChambre1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsChambre.xsd</DependentUpon>
@@ -63,10 +63,28 @@
     <Compile Include="formChambre.Designer.cs">
       <DependentUpon>formChambre.cs</DependentUpon>
     </Compile>
+    <Compile Include="formPKCodeLoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPKCodeLoc.Designer.cs">
+      <DependentUpon>formPKCodeLoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPKCodeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPKCodeType.Designer.cs">
+      <DependentUpon>formPKCodeType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formChambre.resx">
       <DependentUpon>formChambre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPKCodeLoc.resx">
+      <DependentUpon>formPKCodeLoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPKCodeType.resx">
+      <DependentUpon>formPKCodeType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,14 +94,15 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="dsChambre.xsc">
       <DependentUpon>dsChambre.xsd</DependentUpon>
     </None>
     <None Include="dsChambre.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsChambre.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>dsChambre1.Designer.cs</LastGenOutput>
     </None>
     <None Include="dsChambre.xss">
       <DependentUpon>dsChambre.xsd</DependentUpon>
@@ -100,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGlobal", "prGlobal\prGlobal.csproj", "{729B4820-DA80-49A0-950C-95A82C404179}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8} = {6EBE8953-884C-4F68-862D-1F5DECBDA1F8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prGraphiques", "prGraphiques\prGraphiques.csproj", "{6EBE8953-884C-4F68-862D-1F5DECBDA1F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prChambre", "prChambre\prChambre.csproj", "{F1BCAFFC-9924-46C1-8755-76800E67E8A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6EBE8953-884C-4F68-862D-1F5DECBDA1F8} = {6EBE8953-884C-4F68-862D-1F5DECBDA1F8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
